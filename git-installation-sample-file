@@ -2,3 +2,27 @@ This is the first sample file added for testing.
 
 Pycharm setup completed. logged in via url authentication
 
+------------------------In the system ------------------------------
+1. Check if the SSH KEY is already present or not.
+ls -al ~/.ssh
+
+2. If SSH key is not already present, first generate the ssh key.
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+> Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM: [Press enter] : ENTER
+> Enter passphrase (empty for no passphrase): [Type a passphrase] : ENTER
+> Enter same passphrase again: [Type passphrase again] : ENTER
+
+------------------------In the github.com ------------------------------
+3. Add the generated SSH key to Github.com
+user-MacBook-Air ~ % cat ~/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5BBBBYYYYYYLLLLLlW5d4RWQFelb0hPO4Yl71SmofjHKwDpasdaswd “abc.xyz@gmail.com”
+user-MacBook-Air ~ %
+
+------------------------In the GIT-BASH Terminal------------------------------
+Use the ssh url for cloning the git repo.
+We can check the configured url by using below command:
+ git remote show origin
+
+If required to update, we can update the url to ssh url by below command.
+ git remote set-url origin git@github.com:<git_user_name>/newTest.git
